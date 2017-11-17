@@ -45,8 +45,9 @@
                 <prop key="generateDdl">true</prop>
             </props>
         </property>
-
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter" />
+        </property>
+        <property name="persistenceUnitName" value="eclipselink" />
     </bean>
-
-
 </beans>

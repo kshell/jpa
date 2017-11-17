@@ -16,5 +16,10 @@ import java.util.List;
  */
 @org.springframework.stereotype.Repository
 public interface PersonRepository extends JpaRepository<Person, Integer>, JpaSpecificationExecutor<Person> {
-    List<Person> findByLastNameIn(@Param("lastNames") List<String> lastNames);
+    /**
+     * 该方法不被eclipselink支持
+     * @param lastNames
+     * @return
+     */
+    List<Person> findByLastNameIn(List<String> lastNames);
 }

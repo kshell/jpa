@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/persistence"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        version="2.0">
+
+        <persistence-unit name="eclipselink" transaction-type="RESOURCE_LOCAL">
+            <!--
+            配置使用什么 ORM 产品来作为 JPA 的实现
+            1. 实际上配置的是  javax.persistence.spi.PersistenceProvider 接口的实现类
+            2. 若 JPA 项目中只有一个 JPA 的实现产品, 则也可以不配置该节点.
+            -->
+            <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+            <properties>
+                <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+                <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+                <!-- eclipselink.weaving设为ture运行不成功, false,和static成功, 这是一个关键点 -->
+                <property name="eclipselink.weaving" value="static" />
+                <!-- 修改为FINE后，控制台会打印出执行的sql语句，方便调试, 可选值SERVER -->
+                <property name="eclipselink.logging.level" value="FINE"/>
+                <property name="eclipselink.jdbc.allow-native-sql-queries" value="true" />
+                <!-- 定义主键 UUID -->
+                <!--<property name="eclipselink.session.customizer" value="com.tgb.itoo.base.util.uuid.UUIDSequence" />-->
+            </properties>
+        </persistence-unit>
+</persistence>
