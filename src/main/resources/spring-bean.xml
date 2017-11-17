@@ -45,8 +45,9 @@
                 <prop key="generateDdl">true</prop>
             </props>
         </property>
-
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter" />
+        </property>
+        <property name="persistenceUnitName" value="openjpa_2_4_x" />
     </bean>
-
-
 </beans>

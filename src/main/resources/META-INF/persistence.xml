@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+    <persistence-unit name="openjpa_2_4_x" transaction-type="RESOURCE_LOCAL">
+        <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true,PrimaryKeys=true,Indexes=true,schemaAction=refresh)"/>
+
+            <property name="openjpa.ClassLoadEnhancement" value="true"/>
+            <property name="openjpa.DynamicEnhancementAgent" value="true"/>
+            <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+        </properties>
+    </persistence-unit>
+</persistence>
