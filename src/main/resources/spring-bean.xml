@@ -45,8 +45,16 @@
                 <prop key="generateDdl">true</prop>
             </props>
         </property>
-
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+        <!--
+        1.使用hibernate做为jpa实现可以没有persistence.xml,可以不配置persistenceUnitName
+        2.可以在jpaProperties中配置如下hibernate属性
+            <prop key="hibernate.show_sql">true</prop>
+            <prop key="hibernate.format_sql">true</prop>
+            <prop key="hibernate.hbm2ddl.auto">update</prop>
+        -->
+        <property name="persistenceUnitName" value="hibernate" />
     </bean>
-
-
 </beans>

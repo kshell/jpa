@@ -115,7 +115,5 @@ public class SpringDataTest {
             log.info("记录:" + person);
         }
     }
-
-
 }
 
