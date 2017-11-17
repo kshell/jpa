@@ -8,6 +8,8 @@
     <persistence-unit name="openjpa_2_4_x" transaction-type="RESOURCE_LOCAL">
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
         <properties>
+            <!--打印sql语句-->
+            <property name="openjpa.Log" value="SQL=TRACE"/>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true,PrimaryKeys=true,Indexes=true,schemaAction=refresh)"/>
 
             <property name="openjpa.ClassLoadEnhancement" value="true"/>
