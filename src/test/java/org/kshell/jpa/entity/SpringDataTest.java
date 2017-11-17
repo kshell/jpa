@@ -14,6 +14,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.testng.annotations.Test;
 
 import javax.persistence.criteria.*;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,6 +29,11 @@ public class SpringDataTest {
     private PersonRepository personRepository = (PersonRepository) context.getBean("personRepository");
     private PersonService personService = context.getBean(PersonService.class);
 
+    @Test
+    public void testQueryIn() throws Exception {
+        List<Person> list = this.personRepository.findByLastNameIn(Arrays.asList("AAA", "BBB"));
+        log.info(list.toString());
+    }
     /**
      * 测试环境是否正确
      *
