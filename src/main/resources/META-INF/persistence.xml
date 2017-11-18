@@ -9,11 +9,15 @@
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
         <properties>
             <!--打印sql语句-->
-            <property name="openjpa.Log" value="SQL=TRACE"/>
+            <!--<property name="openjpa.Log" value="SQL=TRACE"/>-->
+            <!--<property name ="openjpa.Log" value ="DefaultLevel = WARN,Runtime = INFO,Tool = INFO,SQL = TRACE"/>-->
+            <property name="openjpa.Log" value="slf4j" />
+            <property name="openjpa.ConnectionFactoryProperties"
+                      value="PrettyPrint=true, PrettyPrintLineLength=72"/>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true,PrimaryKeys=true,Indexes=true,schemaAction=refresh)"/>
 
             <property name="openjpa.ClassLoadEnhancement" value="true"/>
-            <property name="openjpa.DynamicEnhancementAgent" value="true"/>
+            <property name="openjpa.DynamicEnhancementAgent" value="false"/>
             <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
         </properties>
     </persistence-unit>
