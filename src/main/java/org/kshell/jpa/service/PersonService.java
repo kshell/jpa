@@ -2,13 +2,15 @@ package org.kshell.jpa.service;
 
 import org.kshell.jpa.entity.Person;
 import org.kshell.jpa.repository.PersonRepository;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.annotation.Resource;
 
 /**
  * @author kshell
@@ -27,8 +29,8 @@ public class PersonService {
 
         for (int i = 'a'; i <= 'z'; i++) {
             Person person = new Person();
-            String name = (char) i + "" + (char) i + (char) i;
-            String emal = name + "@kshell.org";
+            String name   = (char) i + "" + (char) i + (char) i;
+            String emal   = name + "@kshell.org";
 
             person.setLastName(name.toUpperCase());
             person.setEmail(emal.toLowerCase());
