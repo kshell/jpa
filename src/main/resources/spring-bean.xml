@@ -49,8 +49,5 @@
             <bean class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter"/>
         </property>
         <property name="persistenceUnitName" value="openjpa_2_2_2"/>
-
     </bean>
-
-
 </beans>
